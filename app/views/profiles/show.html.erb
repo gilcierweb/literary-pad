@@ -1,0 +1,64 @@
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+  <div class="card p-8 mb-8">
+    <div class="flex items-start justify-between">
+      <div class="flex items-center space-x-6">
+        <div class="w-24 h-24 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-full flex items-center justify-center text-white text-3xl font-bold">
+          <%= @user.profile.display_name.first.upcase %>
+        </div>
+
+        <div>
+          <h1 class="text-3xl font-bold text-gray-900 mb-2"><%= @user.profile.display_name %></h1>
+          <% if @user.profile.bio.present? %>
+            <p class="text-gray-600 mb-3"><%= @user.profile.bio %></p>
+          <% end %>
+
+          <div class="flex items-center space-x-6 text-sm text-gray-600">
+            <div>
+              <span class="font-semibold text-gray-900"><%= @user.stories.count %></span>
+              Stories
+            </div>
+            <div>
+              <span class="font-semibold text-gray-900"><%= @user.followers.count %></span>
+              Followers
+            </div>
+            <div>
+              <span class="font-semibold text-gray-900"><%= @user.following.count %></span>
+              Following
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex space-x-2">
+        <% if user_signed_in? %>
+          <% if current_user == @user %>
+            <%= link_to "Edit Profile", edit_profile_path(@user), class: "btn-secondary" %>
+          <% else %>
+            <% if current_user.following?(@user) %>
+              <%= button_to "Unfollow", user_follows_path(@user), method: :delete, class: "btn-secondary" %>
+            <% else %>
+              <%= button_to "Follow", user_follows_path(@user), class: "btn-primary" %>
+            <% end %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <!-- Stories -->
+  <div class="mb-8">
+    <h2 class="text-2xl font-bold text-gray-900 mb-6">Stories by <%= @user.profile.display_name %></h2>
+
+    <% if @stories.any? %>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        <% @stories.each do |story| %>
+          <%= render "stories/card", story: story %>
+        <% end %>
+      </div>
+    <% else %>
+      <div class="text-center py-12 card">
+        <p class="text-gray-500">No published stories yet.</p>
+      </div>
+    <% end %>
+  </div>
+</div>

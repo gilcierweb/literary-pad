@@ -1,0 +1,150 @@
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+  <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+    <!-- Story Cover & Info -->
+    <div class="lg:col-span-1">
+      <div class="card p-6 sticky top-4">
+        <div class="aspect-[3/4] bg-gradient-to-br from-indigo-500 to-purple-600 rounded-lg mb-4">
+          <% if @story.cover_image.present? %>
+            <%= image_tag @story.cover_image, class: "w-full h-full object-cover rounded-lg" %>
+          <% else %>
+            <div class="flex items-center justify-center h-full text-white text-6xl font-bold">
+              <%= @story.title.first %>
+            </div>
+          <% end %>
+        </div>
+
+        <div class="flex space-x-2 mb-4">
+          <% if user_signed_in? %>
+            <% if current_user.liked?(@story) %>
+              <%= button_to story_likes_path(@story), method: :delete, class: "flex-1 bg-red-500 text-white py-2 rounded-lg hover:bg-red-600 transition" do %>
+                ❤️ Unlike
+              <% end %>
+            <% else %>
+              <%= button_to story_likes_path(@story), class: "flex-1 bg-gray-200 text-gray-800 py-2 rounded-lg hover:bg-gray-300 transition" do %>
+                🤍 Like
+              <% end %>
+            <% end %>
+
+            <% if current_user.favorited?(@story) %>
+              <%= button_to story_favorites_path(@story), method: :delete, class: "flex-1 bg-yellow-500 text-white py-2 rounded-lg hover:bg-yellow-600 transition" do %>
+                ⭐ Favorited
+              <% end %>
+            <% else %>
+              <%= button_to story_favorites_path(@story), class: "flex-1 bg-gray-200 text-gray-800 py-2 rounded-lg hover:bg-gray-300 transition" do %>
+                ☆ Favorite
+              <% end %>
+            <% end %>
+          <% end %>
+        </div>
+
+        <div class="space-y-3 text-sm">
+          <div class="flex justify-between">
+            <span class="text-gray-600">Views</span>
+            <span class="font-semibold"><%= @story.views_count %></span>
+          </div>
+          <div class="flex justify-between">
+            <span class="text-gray-600">Likes</span>
+            <span class="font-semibold"><%= @story.likes_count %></span>
+          </div>
+          <div class="flex justify-between">
+            <span class="text-gray-600">Comments</span>
+            <span class="font-semibold"><%= @story.comments_count %></span>
+          </div>
+          <div class="flex justify-between">
+            <span class="text-gray-600">Chapters</span>
+            <span class="font-semibold"><%= @story.chapters.count %></span>
+          </div>
+          <div class="flex justify-between">
+            <span class="text-gray-600">Status</span>
+            <span class="font-semibold text-primary"><%= @story.status.titleize %></span>
+          </div>
+        </div>
+
+        <% if @story.genres.any? %>
+          <div class="mt-4 pt-4 border-t">
+            <h4 class="text-sm font-semibold text-gray-900 mb-2">Genres</h4>
+            <div class="flex flex-wrap gap-2">
+              <% @story.genres.each do |genre| %>
+                <span class="text-xs bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full">
+                  <%= genre.name %>
+                </span>
+              <% end %>
+            </div>
+          </div>
+        <% end %>
+
+        <% if can? :manage, @story %>
+          <div class="mt-4 pt-4 border-t space-y-2">
+            <%= link_to "Edit Story", edit_story_path(@story), class: "block w-full text-center btn-secondary" %>
+            <%= button_to "Delete Story", story_path(@story), method: :delete, data: { turbo_confirm: "Are you sure?" }, class: "block w-full text-center bg-red-500 text-white py-2 rounded-lg hover:bg-red-600 transition" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+    <!-- Story Content -->
+    <div class="lg:col-span-2">
+      <div class="mb-6">
+        <h1 class="text-4xl font-bold text-gray-900 mb-3"><%= @story.title %></h1>
+
+        <div class="flex items-center space-x-4 text-sm text-gray-600 mb-4">
+          <%= link_to profile_path(@story.user), class: "flex items-center hover:text-primary" do %>
+            <span class="font-semibold"><%= @story.author_name %></span>
+          <% end %>
+          <span>•</span>
+          <span><%= @story.published_at&.strftime("%B %d, %Y") || "Draft" %></span>
+        </div>
+
+        <p class="text-gray-700 leading-relaxed"><%= @story.description %></p>
+      </div>
+
+      <!-- Chapters List -->
+      <div class="card p-6 mb-8">
+        <h2 class="text-2xl font-bold text-gray-900 mb-4">Chapters</h2>
+
+        <% if @chapters.any? %>
+          <div class="space-y-3">
+            <% @chapters.each_with_index do |chapter, index| %>
+              <%= link_to story_chapter_path(@story, chapter), class: "block p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition" do %>
+                <div class="flex justify-between items-center">
+                  <div>
+                    <span class="text-sm text-gray-500">Chapter <%= index + 1 %></span>
+                    <h3 class="font-semibold text-gray-900"><%= chapter.title %></h3>
+                    <p class="text-sm text-gray-600 mt-1">
+                      <%= chapter.word_count %> words • <%= chapter.reading_time %> min read
+                    </p>
+                  </div>
+                  <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                  </svg>
+                </div>
+              <% end %>
+            <% end %>
+          </div>
+        <% else %>
+          <p class="text-gray-500 text-center py-8">No chapters published yet.</p>
+        <% end %>
+
+        <% if can? :manage, @story %>
+          <%= link_to "Add Chapter", new_story_chapter_path(@story), class: "btn-primary mt-4 inline-block" %>
+        <% end %>
+      </div>
+
+      <!-- Comments Section -->
+      <div class="card p-6">
+        <h2 class="text-2xl font-bold text-gray-900 mb-4">Comments (<%= @story.comments_count %>)</h2>
+
+        <% if user_signed_in? %>
+          <%= form_with model: [@story, Comment.new], local: false, class: "mb-6" do |f| %>
+            <%= f.text_area :content, rows: 3, placeholder: "Share your thoughts...", class: "input-field mb-2" %>
+            <%= f.submit "Post Comment", class: "btn-primary" %>
+          <% end %>
+        <% end %>
+
+        <div id="comments">
+          <%= render @comments %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

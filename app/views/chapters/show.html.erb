@@ -1,0 +1,82 @@
+<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+  <!-- Chapter Navigation -->
+  <div class="mb-6">
+    <%= link_to @story, class: "inline-flex items-center text-primary hover:text-primary-dark" do %>
+      <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+      </svg>
+      Back to <%= @story.title %>
+    <% end %>
+  </div>
+
+  <!-- Chapter Header -->
+  <div class="card p-8 mb-6">
+    <div class="mb-4">
+      <span class="text-sm text-gray-500">Chapter <%= @chapter.position %></span>
+      <h1 class="text-4xl font-bold text-gray-900 mt-2"><%= @chapter.title %></h1>
+    </div>
+
+    <div class="flex items-center justify-between text-sm text-gray-600 pb-4 border-b">
+      <div class="flex items-center space-x-4">
+        <%= link_to profile_path(@story.user), class: "flex items-center hover:text-primary" do %>
+          <span class="font-semibold"><%= @story.author_name %></span>
+        <% end %>
+        <span>•</span>
+        <span><%= @chapter.published_at&.strftime("%B %d, %Y") %></span>
+        <span>•</span>
+        <span><%= @chapter.word_count %> words</span>
+        <span>•</span>
+        <span><%= @chapter.reading_time %> min read</span>
+      </div>
+      <div>
+        👁 <%= @chapter.views_count %>
+      </div>
+    </div>
+
+    <!-- Chapter Content -->
+    <div class="prose prose-lg max-w-none mt-8 text-gray-800 leading-relaxed" style="font-family: var(--font-serif);">
+      <%= simple_format(@chapter.content) %>
+    </div>
+
+    <!-- Chapter Actions -->
+    <% if can? :manage, @chapter %>
+      <div class="mt-8 pt-6 border-t flex space-x-4">
+        <%= link_to "Edit Chapter", edit_story_chapter_path(@story, @chapter), class: "btn-secondary" %>
+        <%= button_to "Delete Chapter", story_chapter_path(@story, @chapter), method: :delete, data: { turbo_confirm: "Are you sure?" }, class: "bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 transition" %>
+      </div>
+    <% end %>
+  </div>
+
+  <!-- Chapter Navigation -->
+  <div class="flex justify-between mb-8">
+    <% if @chapter.previous_chapter %>
+      <%= link_to story_chapter_path(@story, @chapter.previous_chapter), class: "btn-secondary" do %>
+        ← Previous Chapter
+      <% end %>
+    <% else %>
+      <div></div>
+    <% end %>
+
+    <% if @chapter.next_chapter %>
+      <%= link_to story_chapter_path(@story, @chapter.next_chapter), class: "btn-primary" do %>
+        Next Chapter →
+      <% end %>
+    <% end %>
+  </div>
+
+  <!-- Comments -->
+  <div class="card p-6">
+    <h2 class="text-2xl font-bold text-gray-900 mb-4">Comments</h2>
+
+    <% if user_signed_in? %>
+      <%= form_with model: [@story, @chapter, Comment.new], local: false, class: "mb-6" do |f| %>
+        <%= f.text_area :content, rows: 3, placeholder: "Share your thoughts on this chapter...", class: "input-field mb-2" %>
+        <%= f.submit "Post Comment", class: "btn-primary" %>
+      <% end %>
+    <% end %>
+
+    <div id="comments">
+      <%= render @comments %>
+    </div>
+  </div>
+</div>
