@@ -2,7 +2,7 @@ class DiscoverController < ApplicationController
   def index
     @genres = Genre.all
 
-    stories = Story.published_stories.includes(:user, :genres)
+    stories = Story.published_stories.includes(user: :profile, genres: [])
 
     stories = stories.joins(:genres).where(genres: { id: params[:genre_id] }) if params[:genre_id].present?
     stories = stories.where("title ILIKE ? OR description ILIKE ?", "%#{params[:q]}%", "%#{params[:q]}%") if params[:q].present?
