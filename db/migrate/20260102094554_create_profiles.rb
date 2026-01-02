@@ -7,12 +7,14 @@ class CreateProfiles < ActiveRecord::Migration[8.1]
       t.string :avatar
       t.string :location
       t.string :website
-      t.jsonb :social_links
-      t.integer :followers_count
-      t.integer :following_count
-      t.integer :stories_count
+      t.jsonb :social_links, default: {}
+      t.integer :followers_count, default: 0
+      t.integer :following_count, default: 0
+      t.integer :stories_count, default: 0
 
       t.timestamps
     end
+
+    add_index :profiles, :user_id, unique: true
   end
 end

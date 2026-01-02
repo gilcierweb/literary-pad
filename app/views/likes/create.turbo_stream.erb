@@ -1,0 +1,5 @@
+<%= turbo_stream.replace "like_button_#{@likeable.class.name}_#{@likeable.id}" do %>
+  <%= button_to unlike_path, method: :delete, id: "like_button_#{@likeable.class.name}_#{@likeable.id}", class: "flex-1 bg-red-500 text-white py-2 rounded-lg hover:bg-red-600 transition" do %>
+    ❤️ Unlike
+  <% end %>
+<% end %>
