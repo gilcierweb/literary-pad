@@ -4,7 +4,7 @@ class ProfilesController < ApplicationController
   before_action :set_profile, only: [:edit, :update]
 
   def show
-    @stories = @user.stories.published_stories.recent
+    @stories = @user.stories.published_stories.includes(user: :profile, genres: []).recent
     @followers = @user.followers.limit(10)
     @following = @user.following.limit(10)
   end

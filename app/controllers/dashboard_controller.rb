@@ -2,9 +2,9 @@ class DashboardController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @my_stories = current_user.stories.includes(:chapters).recent
+    @my_stories = current_user.stories.recent
     @reading_history = current_user.readings.includes(chapter: :story).recent.limit(10)
-    @favorites = current_user.favorited_stories.includes(:user).recent.limit(6)
+    @favorites = current_user.favorited_stories.includes(user: :profile).recent.limit(6)
 
     @stats = {
       stories_count: current_user.stories.count,

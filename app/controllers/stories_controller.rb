@@ -4,7 +4,7 @@ class StoriesController < ApplicationController
   load_and_authorize_resource
 
   def index
-    @pagy, @stories = pagy(Story.published_stories.includes(:user, :genres).recent, items: 12)
+    @pagy, @stories = pagy(Story.published_stories.includes(user: :profile, genres: []).recent, items: 12)
   end
 
   def show
