@@ -1,5 +1,134 @@
 @import "tailwindcss";
 
+@source "../../../public/*.html";
+@source "../../../app/views/**/*.html.erb";
+@source "../../../app/helpers/**/*.rb";
+@source "../../../app/assets/stylesheets/**/*.css";
+@source "../../../app/javascript/**/*.js";
+@source "../../../app/views/**/*";
+
+@plugin "flyonui";
+/*@plugin "flyonui" {*/
+/*    !*themes: mintlify --default;*!*/
+/*    !*themes: light --default, dark --prefersdark;*!*/
+/*    !*include: avatar, avatar-placeholder, text-secondary-content,badge, dropdown, navbar, timeline, modal;*!*/
+/*}*/
+
+@import "flyonui/variants.css";
+
+@plugin "@iconify/tailwind4";
+
+/*@import "./node_modules/flyonui/src/js/plugins/accordion/variants.css";*/
+/*@source "./node_modules/flyonui/dist/accordion.js";*/
+/*@source "./node_modules/flyonui/dist/overlay.js";*/
+
+/*@import "./../../../node_modules/flyonui/components/accordion.css";*/
+/*@import "./../../../node_modules/flyonui/components/avatar.css";*/
+/*@import "./../../../node_modules/flyonui/components/avatar";*/
+/*@import "./../../../node_modules/flyonui/components/accordion.css";*/
+/*@import "./../../../node_modules/flyonui/components/navbar.css";*/
+/*@import "./../../../node_modules/flyonui/components/modal.css";*/
+
+/*
+ * Força a inclusão de uma lista específica de classes - tailwindcss remove safelist replace @source inline("...");
+ * que são usadas dinamicamente no projeto.
+ * Abordagem sem regex.
+ */
+@source inline("avatar avatar-placeholder bg-primary text-primary-content bg-secondary text-secondary-content rounded-full w-10 text-md uppercase flex items-center justify-center text-info-content bg-info text-success-content bg-success text-warning-content bg-warning text-error-content bg-error badge-error");
+@source inline("overlay overlay-open overlay-open:opacity-100 overlay-open:duration-300 bg-gray-900/50 modal modal-dialog modal-content modal-header modal-body modal-footer modal-middle modal-middle-start modal-middle-end hidden fixed inset-0 absolute end-3 top-3 z-[60] transition duration-300 opacity-0 opacity-100 btn btn-primary btn-soft btn-secondary btn-sm btn-text btn-circle text-base font-medium size-4");
+
+/*@source "./node_modules/flyonui/flyonui.js";*/
+@source "./node_modules/flyonui/dist/index.js";
+/*@source "./node_modules/flyonui/dist/accordion.js";*/
+/*@source "./node_modules/flyonui/dist/dropdown.js";*/
+/*@source "./node_modules/flyonui/dist/remove-element.js";*/
+/*@source "./node_modules/flyonui/dist/overlay.js";*/
+
+/*layers*/
+/*@layer base {*/
+/*    h1{ @apply text-primary leading-tight; }*/
+/*}*/
+/*@layer component {*/
+/*    .card { @apply shadow-lg; }*/
+/*}*/
+/*@layer utilities {*/
+/*    .flex {    display: flex;  }*/
+/*}*/
+
+@layer utilities {
+    @keyframes fade-in {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+
+    .animate-fade-in {
+        animation: fade-in 0.6s ease-out forwards;
+    }
+
+    @keyframes fade-in-up {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .animate-fade-in-up {
+        animation: fade-in-up 0.6s ease-out forwards;
+    }
+
+    @keyframes fade-in-down {
+        from {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .animate-fade-in-down {
+        animation: fade-in-down 0.3s ease-out forwards;
+    }
+
+}
+
+/*Custom classes tailwindcss*/
+
+.h1 {
+    @apply text-base-content text-4xl;
+}
+.h2 {
+    @apply text-base-content text-3xl;
+}
+.h3 {
+    @apply text-base-content text-2xl;
+}
+.h4 {
+    @apply text-base-content text-xl;
+}
+.h5 {
+    @apply text-base-content text-lg;
+}
+.h6 {
+    @apply text-base-content text-base;
+}
+.form-label{
+    @apply text-gray-800 text-sm mb-2 block;
+}
+
+.form-control-checkout {
+    @apply px-4 py-3 bg-white text-gray-800 w-full text-sm border-2 rounded-md focus:border-blue-500 outline-none;
+}
+
 @theme {
     --color-primary: #6366f1;
     --color-primary-dark: #4f46e5;
