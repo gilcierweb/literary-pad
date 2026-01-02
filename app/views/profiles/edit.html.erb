@@ -1,0 +1,52 @@
+<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+  <div class="mb-8">
+    <h1 class="text-4xl font-bold text-gray-900 mb-2">Edit Profile</h1>
+    <p class="text-gray-600">Update your profile information</p>
+  </div>
+
+  <div class="card p-8">
+    <%= form_with model: @profile, url: profile_path(current_user), method: :patch, class: "space-y-6" do |f| %>
+      <% if @profile.errors.any? %>
+        <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded">
+          <h3 class="font-bold mb-2"><%= pluralize(@profile.errors.count, "error") %> prohibited this profile from being saved:</h3>
+          <ul class="list-disc list-inside">
+            <% @profile.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <div>
+        <%= f.label :pen_name, "Pen Name", class: "block text-sm font-medium text-gray-700 mb-2" %>
+        <%= f.text_field :pen_name, class: "input-field", placeholder: "Your author name" %>
+      </div>
+
+      <div>
+        <%= f.label :bio, "Bio", class: "block text-sm font-medium text-gray-700 mb-2" %>
+        <%= f.text_area :bio, rows: 4, class: "input-field", placeholder: "Tell readers about yourself..." %>
+        <p class="text-sm text-gray-500 mt-1">Maximum 500 characters</p>
+      </div>
+
+      <div>
+        <%= f.label :location, "Location", class: "block text-sm font-medium text-gray-700 mb-2" %>
+        <%= f.text_field :location, class: "input-field", placeholder: "City, Country" %>
+      </div>
+
+      <div>
+        <%= f.label :website, "Website", class: "block text-sm font-medium text-gray-700 mb-2" %>
+        <%= f.url_field :website, class: "input-field", placeholder: "https://yourwebsite.com" %>
+      </div>
+
+      <div>
+        <%= f.label :avatar, "Avatar URL", class: "block text-sm font-medium text-gray-700 mb-2" %>
+        <%= f.text_field :avatar, class: "input-field", placeholder: "https://example.com/avatar.jpg" %>
+      </div>
+
+      <div class="flex space-x-4">
+        <%= f.submit "Save Changes", class: "btn-primary" %>
+        <%= link_to "Cancel", profile_path(current_user), class: "btn-secondary" %>
+      </div>
+    <% end %>
+  </div>
+</div>

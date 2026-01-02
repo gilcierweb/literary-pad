@@ -1,0 +1,48 @@
+<%= form_with model: story, class: "space-y-6" do |f| %>
+  <% if story.errors.any? %>
+    <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded">
+      <h3 class="font-bold mb-2"><%= pluralize(story.errors.count, "error") %> prohibited this story from being saved:</h3>
+      <ul class="list-disc list-inside">
+        <% story.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= f.label :title, "Story Title", class: "block text-sm font-medium text-gray-700 mb-2" %>
+    <%= f.text_field :title, class: "input-field", placeholder: "Enter your story title" %>
+  </div>
+
+  <div>
+    <%= f.label :description, "Description", class: "block text-sm font-medium text-gray-700 mb-2" %>
+    <%= f.text_area :description, rows: 5, class: "input-field", placeholder: "Describe your story..." %>
+    <p class="text-sm text-gray-500 mt-1">A compelling description helps readers discover your story</p>
+  </div>
+
+  <div>
+    <%= f.label :genre_ids, "Genres", class: "block text-sm font-medium text-gray-700 mb-2" %>
+    <%= f.collection_check_boxes :genre_ids, Genre.all, :id, :name do |b| %>
+      <div class="inline-flex items-center mr-4 mb-2">
+        <%= b.check_box class: "rounded text-primary focus:ring-primary" %>
+        <%= b.label class: "ml-2 text-sm text-gray-700" %>
+      </div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= f.label :cover_image, "Cover Image URL (optional)", class: "block text-sm font-medium text-gray-700 mb-2" %>
+    <%= f.text_field :cover_image, class: "input-field", placeholder: "https://example.com/cover.jpg" %>
+  </div>
+
+  <div>
+    <%= f.label :status, "Status", class: "block text-sm font-medium text-gray-700 mb-2" %>
+    <%= f.select :status, Story.statuses.keys.map { |k| [k.titleize, k] }, {}, class: "input-field" %>
+  </div>
+
+  <div class="flex space-x-4">
+    <%= f.submit class: "btn-primary" %>
+    <%= link_to "Cancel", story.persisted? ? story : stories_path, class: "btn-secondary" %>
+  </div>
+<% end %>

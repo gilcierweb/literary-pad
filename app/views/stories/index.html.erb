@@ -1,0 +1,23 @@
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+  <div class="mb-8">
+    <h1 class="text-4xl font-bold text-gray-900 mb-2">All Stories</h1>
+    <p class="text-gray-600">Explore thousands of stories from talented authors</p>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+    <% @stories.each do |story| %>
+      <%= render "stories/card", story: story %>
+    <% end %>
+  </div>
+
+  <% if @stories.empty? %>
+    <div class="text-center py-16">
+      <p class="text-gray-500 text-lg">No stories found.</p>
+      <%= link_to "Start Writing", new_story_path, class: "btn-primary mt-4 inline-block" %>
+    </div>
+  <% end %>
+
+  <div class="mt-8">
+    <%== pagy_nav(@pagy) if @pagy.pages > 1 %>
+  </div>
+</div>

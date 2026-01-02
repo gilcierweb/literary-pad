@@ -1,0 +1,40 @@
+<footer class="bg-white border-t mt-16">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+      <div>
+        <h3 class="text-lg font-bold text-gray-900 mb-4">📚 StoryHub</h3>
+        <p class="text-gray-600 text-sm">A modern platform for writers and readers to connect through stories.</p>
+      </div>
+
+      <div>
+        <h4 class="font-semibold text-gray-900 mb-4">Explore</h4>
+        <ul class="space-y-2 text-sm">
+          <li><%= link_to "Discover Stories", discover_index_path, class: "text-gray-600 hover:text-primary" %></li>
+          <li><%= link_to "Browse Genres", discover_index_path, class: "text-gray-600 hover:text-primary" %></li>
+          <li><%= link_to "Popular Stories", stories_path(sort: "popular"), class: "text-gray-600 hover:text-primary" %></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="font-semibold text-gray-900 mb-4">Create</h4>
+        <ul class="space-y-2 text-sm">
+          <li><%= link_to "Write a Story", new_story_path, class: "text-gray-600 hover:text-primary" %></li>
+          <li><%= link_to "Dashboard", dashboard_path, class: "text-gray-600 hover:text-primary" %></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="font-semibold text-gray-900 mb-4">Community</h4>
+        <ul class="space-y-2 text-sm">
+          <li><a href="#" class="text-gray-600 hover:text-primary">Guidelines</a></li>
+          <li><a href="#" class="text-gray-600 hover:text-primary">Support</a></li>
+          <li><a href="#" class="text-gray-600 hover:text-primary">About Us</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="border-t mt-8 pt-8 text-center text-sm text-gray-600">
+      <p>&copy; <%= Time.current.year %> StoryHub. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
