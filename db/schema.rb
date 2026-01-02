@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_01_02_094954) do
+ActiveRecord::Schema[8.1].define(version: 2026_01_02_111142) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -112,6 +112,7 @@ ActiveRecord::Schema[8.1].define(version: 2026_01_02_094954) do
   end
 
   create_table "stories", force: :cascade do |t|
+    t.integer "chapters_count", default: 0
     t.integer "comments_count"
     t.string "cover_image"
     t.datetime "created_at", null: false

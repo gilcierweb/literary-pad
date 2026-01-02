@@ -1,0 +1,10 @@
+<%= turbo_stream.prepend "comments" do %>
+  <%= render @comment %>
+<% end %>
+
+<%= turbo_stream.replace "comment_form" do %>
+  <%= form_with model: [@commentable, Comment.new], id: "comment_form", local: false, class: "mb-6" do |f| %>
+    <%= f.text_area :content, rows: 3, placeholder: "Share your thoughts...", class: "input-field mb-2" %>
+    <%= f.submit "Post Comment", class: "btn-primary" %>
+  <% end %>
+<% end %>

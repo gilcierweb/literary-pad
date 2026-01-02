@@ -1,12 +1,28 @@
 Rails.application.routes.draw do
   get "dashboard", to: "dashboard#index", as: :dashboard
   get "discover", to: "discover#index", as: :discover
-  resources :chapters
-  resources :stories
 
-  get "profiles/show"
-  get "profiles/edit"
-  get "profiles/update"
+  resources :profiles, only: [:show, :edit, :update]
+
+  resources :stories do
+    member do
+      post :publish
+    end
+
+    resources :chapters do
+      resources :comments, only: [:create, :destroy]
+    end
+
+    resources :likes, only: [:create, :destroy]
+    resources :comments, only: [:create, :destroy]
+    resources :favorites, only: [:create, :destroy]
+  end
+
+  resources :users, only: [] do
+    resources :follows, only: [:create, :destroy]
+  end
+
+
   get "home/index"
   devise_for :users
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

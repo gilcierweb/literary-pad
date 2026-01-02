@@ -1,0 +1,5 @@
+<%= turbo_stream.replace "like_button_#{@likeable.class.name}_#{@likeable.id}" do %>
+  <%= button_to like_path, id: "like_button_#{@likeable.class.name}_#{@likeable.id}", class: "flex-1 bg-gray-200 text-gray-800 py-2 rounded-lg hover:bg-gray-300 transition" do %>
+    🤍 Like
+  <% end %>
+<% end %>
