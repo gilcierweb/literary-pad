@@ -22,6 +22,8 @@ Things you may want to cover:
 
 * ...
 
+![App Nuxt](app/assets/images/literary-pad.webp)
+
 ### Skills
 
 - [Ruby](https://www.ruby-lang.org/)
