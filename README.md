@@ -1,7 +1,6 @@
 # LiteraryPad
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Discover Amazing Stories, Ruby on Rails, Turbo Stream, Stimulus.js, PostgreSQL, Redis, Tailwindcss, Flyonui.
 
 Things you may want to cover:
 
