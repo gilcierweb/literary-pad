@@ -79,3 +79,4 @@ coverage
 /.pnp.cjs
 /.pnp.loader.mjs
 .docs
+docs/
