@@ -75,6 +75,7 @@ tasks.json
 tasks/
 coverage
 .yarn
+.yarnrc.yml
 /.pnp.cjs
 /.pnp.loader.mjs
 .docs
