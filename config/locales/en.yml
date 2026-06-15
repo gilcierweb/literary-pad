@@ -28,4 +28,6 @@
 #       enabled: "ON"
 
 en:
+  app:
+    name: "Literary Pad"
   hello: "Hello world"
