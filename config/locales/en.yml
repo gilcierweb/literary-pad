@@ -30,4 +30,5 @@
 en:
   app:
     name: "Literary Pad"
+    tagline: "Your creative space"
   hello: "Hello world"
