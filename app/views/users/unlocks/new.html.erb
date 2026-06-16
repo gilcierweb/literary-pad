@@ -1,15 +1,18 @@
-<h2>Resend unlock instructions</h2>
+<div>
+  <h3 class="text-base-content mb-1.5 text-2xl font-semibold">Resend unlock instructions</h3>
+  <p class="text-base-content/80">Enter your email address to receive unlock instructions</p>
+</div>
 
 <%= form_for(resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post }) do |f| %>
   <%= render "users/shared/error_messages", resource: resource %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  <div class="mb-6">
+    <%= f.label :email, class: "label-text" %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "input input-bordered w-full" %>
   </div>
 
-  <div class="actions">
-    <%= f.submit "Resend unlock instructions" %>
+  <div class="mb-4">
+    <%= f.submit "Resend unlock instructions", class: "btn btn-lg btn-primary btn-block" %>
   </div>
 <% end %>
 
