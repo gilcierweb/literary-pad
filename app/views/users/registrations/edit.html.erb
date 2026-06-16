@@ -1,6 +1,6 @@
 <div>
-  <h3 class="text-base-content mb-1.5 text-2xl font-semibold">Edit Profile</h3>
-  <p class="text-base-content/80">Update your account information</p>
+  <h3 class="text-base-content mb-1.5 text-2xl font-semibold"><%= t '.title' %></h3>
+  <p class="text-base-content/80"><%= t '.subtitle' %></p>
 </div>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
@@ -12,15 +12,15 @@
   </div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div class="mb-4 text-sm text-base-content/80">Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+    <div class="mb-4 text-sm text-base-content/80"><%= t '.waiting_confirmation' %> <%= resource.unconfirmed_email %></div>
   <% end %>
 
   <div class="mb-4">
     <%= f.label :password, class: "label-text" %>
-    <i class="text-sm text-base-content/60">(leave blank if you don't want to change it)</i>
+    <i class="text-sm text-base-content/60"><%= t '.leave_blank' %></i>
     <%= f.password_field :password, autocomplete: "new-password", class: "input input-bordered w-full" %>
     <% if @minimum_password_length %>
-    <em class="text-sm text-base-content/60"><%= @minimum_password_length %> characters minimum</em>
+    <em class="text-sm text-base-content/60"><%= t '.password_minimum', count: @minimum_password_length %></em>
     <% end %>
   </div>
 
@@ -31,23 +31,23 @@
 
   <div class="mb-6">
     <%= f.label :current_password, class: "label-text" %>
-    <i class="text-sm text-base-content/60">(we need your current password to confirm your changes)</i>
+    <i class="text-sm text-base-content/60"><%= t '.current_password' %></i>
     <%= f.password_field :current_password, autocomplete: "current-password", class: "input input-bordered w-full" %>
   </div>
 
   <div class="mb-4">
-    <%= f.submit "Update", class: "btn btn-lg btn-primary btn-block" %>
+    <%= f.submit t('.submit'), class: "btn btn-lg btn-primary btn-block" %>
   </div>
 <% end %>
 
 <div class="divider"></div>
 
 <div class="mb-4">
-  <h3 class="text-base-content mb-2 text-lg font-semibold">Cancel my account</h3>
-  <p class="text-base-content/80 mb-4">Unhappy?</p>
-  <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?", turbo_confirm: "Are you sure?" }, method: :delete, class: "btn btn-error btn-sm" %>
+  <h3 class="text-base-content mb-2 text-lg font-semibold"><%= t '.cancel_title' %></h3>
+  <p class="text-base-content/80 mb-4"><%= t '.cancel_subtitle' %></p>
+  <%= button_to t('.cancel_button'), registration_path(resource_name), data: { confirm: t('.cancel_confirm'), turbo_confirm: t('.cancel_confirm') }, method: :delete, class: "btn btn-error btn-sm" %>
 </div>
 
 <div class="text-center">
-  <%= link_to "Back", :back, class: "link link-primary" %>
+  <%= link_to t('.back'), :back, class: "link link-primary" %>
 </div>

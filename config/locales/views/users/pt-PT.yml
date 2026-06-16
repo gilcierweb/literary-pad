@@ -1,0 +1,87 @@
+pt-PT:
+  users:
+    confirmations:
+      new:
+        title: "Reenviar instruções de confirmação"
+        subtitle: "Introduza o seu endereço de e-mail para receber as instruções de confirmação"
+        submit: "Reenviar instruções de confirmação"
+    mailer:
+      confirmation_instructions:
+        welcome: "Bem-vindo"
+        instruction: "Pode confirmar o e-mail da sua conta através do link abaixo:"
+        action: "Confirmar a minha conta"
+      email_changed:
+        hello: "Olá"
+        changing: "Estamos a contactá-lo para notificar que o seu e-mail está a ser alterado para"
+        changed: "Estamos a contactá-lo para notificar que o seu e-mail foi alterado para"
+      password_change:
+        hello: "Olá"
+        notification: "Estamos a contactá-lo para notificar que a sua palavra-passe foi alterada."
+      reset_password_instructions:
+        hello: "Olá"
+        request: "Alguém solicitou um link para alterar a sua palavra-passe. Pode fazê-lo através do link abaixo."
+        action: "Alterar a minha palavra-passe"
+        ignore: "Se não solicitou isto, por favor ignore este e-mail."
+        instruction: "A sua palavra-passe não será alterada até aceder ao link acima e criar uma nova."
+      unlock_instructions:
+        hello: "Olá"
+        locked: "A sua conta foi bloqueada devido a um número excessivo de tentativas de início de sessão sem sucesso."
+        instruction: "Clique no link abaixo para desbloquear a sua conta:"
+        action: "Desbloquear a minha conta"
+    passwords:
+      new:
+        title: "Esqueceu a sua palavra-passe?"
+        subtitle: "Introduza o seu endereço de e-mail e enviaremos instruções para redefinir a sua palavra-passe"
+        submit: "Enviar instruções de redefinição de palavra-passe"
+        remember: "Lembra-se da sua palavra-passe?"
+        login: "Iniciar sessão"
+        or: "ou"
+      edit:
+        title: "Alterar a sua palavra-passe"
+        subtitle: "Introduza a sua nova palavra-passe abaixo"
+        new_password: "Nova palavra-passe"
+        password_minimum: "(mínimo de %{count} caracteres)"
+        confirm_password: "Confirmar nova palavra-passe"
+        submit: "Alterar a minha palavra-passe"
+    registrations:
+      new:
+        title: "Registar-se"
+        subtitle: "Junte-se ao %{app_name} e comece a sua jornada de escrita"
+        password_minimum: "(mínimo de %{count} caracteres)"
+        submit: "Registar-se"
+        have_account: "Já tem uma conta?"
+        login: "Iniciar sessão"
+        or: "ou"
+      edit:
+        title: "Editar Perfil"
+        subtitle: "Atualize as informações da sua conta"
+        waiting_confirmation: "A aguardar confirmação para:"
+        leave_blank: "(deixe em branco se não quiser alterá-la)"
+        password_minimum: "mínimo de %{count} caracteres"
+        current_password: "(precisamos da sua palavra-passe atual para confirmar as suas alterações)"
+        submit: "Atualizar"
+        cancel_title: "Cancelar a minha conta"
+        cancel_subtitle: "Insatisfeito?"
+        cancel_confirm: "Tem a certeza?"
+        cancel_button: "Cancelar a minha conta"
+        back: "Voltar"
+    sessions:
+      new:
+        title: "Iniciar sessão"
+        subtitle: "Bem-vindo de volta ao %{app_name}"
+        remember_me: "Lembrar-me"
+        forgot_password: "Esqueceu a palavra-passe?"
+        submit: "Iniciar sessão"
+        new_platform: "Novo na nossa plataforma?"
+        create_account: "Criar uma conta"
+        or: "ou"
+    shared:
+      links:
+        login: "Iniciar sessão"
+        sign_up: "Registar-se"
+        forgot_password: "Esqueceu a sua palavra-passe?"
+        didnt_receive_confirmation: "Não recebeu instruções de confirmação?"
+        didnt_receive_unlock: "Não recebeu instruções de desbloqueio?"
+        sign_in_with: "Iniciar sessão com %{provider}"
+      error_messages:
+        title_html: "%{count} erro(s) impediram que este %{resource} fosse guardado:"

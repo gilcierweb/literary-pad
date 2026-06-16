@@ -1,0 +1,87 @@
+es:
+  users:
+    confirmations:
+      new:
+        title: "Reenviar instrucciones de confirmación"
+        subtitle: "Ingrese su dirección de correo electrónico para recibir instrucciones de confirmación"
+        submit: "Reenviar instrucciones de confirmación"
+    mailer:
+      confirmation_instructions:
+        welcome: "Bienvenido"
+        instruction: "Puede confirmar el correo electrónico de su cuenta a través del siguiente enlace:"
+        action: "Confirmar mi cuenta"
+      email_changed:
+        hello: "Hola"
+        changing: "Le contactamos para notificarle que su correo electrónico está siendo cambiado a"
+        changed: "Le contactamos para notificarle que su correo electrónico ha sido cambiado a"
+      password_change:
+        hello: "Hola"
+        notification: "Le contactamos para notificarle que su contraseña ha sido cambiada."
+      reset_password_instructions:
+        hello: "Hola"
+        request: "Alguien ha solicitado un enlace para cambiar su contraseña. Puede hacerlo a través del siguiente enlace."
+        action: "Cambiar mi contraseña"
+        ignore: "Si no solicitó esto, por favor ignore este correo electrónico."
+        instruction: "Su contraseña no cambiará hasta que acceda al enlace anterior y cree una nueva."
+      unlock_instructions:
+        hello: "Hola"
+        locked: "Su cuenta ha sido bloqueada debido a un número excesivo de intentos de inicio de sesión fallidos."
+        instruction: "Haga clic en el siguiente enlace para desbloquear su cuenta:"
+        action: "Desbloquear mi cuenta"
+    passwords:
+      new:
+        title: "¿Olvidó su contraseña?"
+        subtitle: "Ingrese su dirección de correo electrónico y le enviaremos instrucciones para restablecer su contraseña"
+        submit: "Enviarme instrucciones para restablecer contraseña"
+        remember: "¿Recuerda su contraseña?"
+        login: "Iniciar sesión"
+        or: "o"
+      edit:
+        title: "Cambiar su contraseña"
+        subtitle: "Ingrese su nueva contraseña a continuación"
+        new_password: "Nueva contraseña"
+        password_minimum: "(mínimo %{count} caracteres)"
+        confirm_password: "Confirmar nueva contraseña"
+        submit: "Cambiar mi contraseña"
+    registrations:
+      new:
+        title: "Registrarse"
+        subtitle: "Únase a %{app_name} y comience su viaje de escritura"
+        password_minimum: "(mínimo %{count} caracteres)"
+        submit: "Registrarse"
+        have_account: "¿Ya tiene una cuenta?"
+        login: "Iniciar sesión"
+        or: "o"
+      edit:
+        title: "Editar Perfil"
+        subtitle: "Actualice su información de cuenta"
+        waiting_confirmation: "Actualmente esperando confirmación para:"
+        leave_blank: "(deje en blanco si no desea cambiarla)"
+        password_minimum: "mínimo %{count} caracteres"
+        current_password: "(necesitamos su contraseña actual para confirmar sus cambios)"
+        submit: "Actualizar"
+        cancel_title: "Cancelar mi cuenta"
+        cancel_subtitle: "¿Descontento?"
+        cancel_confirm: "¿Está seguro?"
+        cancel_button: "Cancelar mi cuenta"
+        back: "Volver"
+    sessions:
+      new:
+        title: "Iniciar sesión"
+        subtitle: "Bienvenido de nuevo a %{app_name}"
+        remember_me: "Recordarme"
+        forgot_password: "¿Olvidó su contraseña?"
+        submit: "Iniciar sesión"
+        new_platform: "¿Nuevo en nuestra plataforma?"
+        create_account: "Crear una cuenta"
+        or: "o"
+    shared:
+      links:
+        login: "Iniciar sesión"
+        sign_up: "Registrarse"
+        forgot_password: "¿Olvidó su contraseña?"
+        didnt_receive_confirmation: "¿No recibió instrucciones de confirmación?"
+        didnt_receive_unlock: "¿No recibió instrucciones de desbloqueo?"
+        sign_in_with: "Iniciar sesión con %{provider}"
+      error_messages:
+        title_html: "%{count} error(es) impidieron que este %{resource} se guardara:"

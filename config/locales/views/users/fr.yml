@@ -1,0 +1,87 @@
+fr:
+  users:
+    confirmations:
+      new:
+        title: "Renvoyer les instructions de confirmation"
+        subtitle: "Entrez votre adresse e-mail pour recevoir les instructions de confirmation"
+        submit: "Renvoyer les instructions de confirmation"
+    mailer:
+      confirmation_instructions:
+        welcome: "Bienvenue"
+        instruction: "Vous pouvez confirmer l'e-mail de votre compte via le lien ci-dessous:"
+        action: "Confirmer mon compte"
+      email_changed:
+        hello: "Bonjour"
+        changing: "Nous vous contactons pour vous informer que votre e-mail est en cours de modification vers"
+        changed: "Nous vous contactons pour vous informer que votre e-mail a été modifié vers"
+      password_change:
+        hello: "Bonjour"
+        notification: "Nous vous contactons pour vous informer que votre mot de passe a été modifié."
+      reset_password_instructions:
+        hello: "Bonjour"
+        request: "Quelqu'un a demandé un lien pour modifier votre mot de passe. Vous pouvez le faire via le lien ci-dessous."
+        action: "Modifier mon mot de passe"
+        ignore: "Si vous n'avez pas demandé cela, veuillez ignorer cet e-mail."
+        instruction: "Votre mot de passe ne sera pas modifié tant que vous n'aurez pas accédé au lien ci-dessus et en créé un nouveau."
+      unlock_instructions:
+        hello: "Bonjour"
+        locked: "Votre compte a été bloqué en raison d'un nombre excessif de tentatives de connexion infructueuses."
+        instruction: "Cliquez sur le lien ci-dessous pour débloquer votre compte:"
+        action: "Débloquer mon compte"
+    passwords:
+      new:
+        title: "Mot de passe oublié?"
+        subtitle: "Entrez votre adresse e-mail et nous vous enverrons les instructions pour réinitialiser votre mot de passe"
+        submit: "Envoyer les instructions de réinitialisation du mot de passe"
+        remember: "Vous souvenez-vous de votre mot de passe?"
+        login: "Se connecter"
+        or: "ou"
+      edit:
+        title: "Modifier votre mot de passe"
+        subtitle: "Entrez votre nouveau mot de passe ci-dessous"
+        new_password: "Nouveau mot de passe"
+        password_minimum: "(minimum %{count} caractères)"
+        confirm_password: "Confirmer le nouveau mot de passe"
+        submit: "Modifier mon mot de passe"
+    registrations:
+      new:
+        title: "S'inscrire"
+        subtitle: "Rejoignez %{app_name} et commencez votre voyage d'écriture"
+        password_minimum: "(minimum %{count} caractères)"
+        submit: "S'inscrire"
+        have_account: "Vous avez déjà un compte?"
+        login: "Se connecter"
+        or: "ou"
+      edit:
+        title: "Modifier le profil"
+        subtitle: "Mettez à jour les informations de votre compte"
+        waiting_confirmation: "En attente de confirmation pour:"
+        leave_blank: "(laissez vide si vous ne voulez pas le modifier)"
+        password_minimum: "minimum %{count} caractères"
+        current_password: "(nous avons besoin de votre mot de passe actuel pour confirmer vos modifications)"
+        submit: "Mettre à jour"
+        cancel_title: "Annuler mon compte"
+        cancel_subtitle: "Mécontent?"
+        cancel_confirm: "Êtes-vous sûr?"
+        cancel_button: "Annuler mon compte"
+        back: "Retour"
+    sessions:
+      new:
+        title: "Se connecter"
+        subtitle: "Bon retour sur %{app_name}"
+        remember_me: "Se souvenir de moi"
+        forgot_password: "Mot de passe oublié?"
+        submit: "Se connecter"
+        new_platform: "Nouveau sur notre plateforme?"
+        create_account: "Créer un compte"
+        or: "ou"
+    shared:
+      links:
+        login: "Se connecter"
+        sign_up: "S'inscrire"
+        forgot_password: "Mot de passe oublié?"
+        didnt_receive_confirmation: "Vous n'avez pas reçu les instructions de confirmation?"
+        didnt_receive_unlock: "Vous n'avez pas reçu les instructions de débloquage?"
+        sign_in_with: "Se connecter avec %{provider}"
+      error_messages:
+        title_html: "%{count} erreur(s) ont empêché ce %{resource} d'être enregistré:"

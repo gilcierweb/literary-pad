@@ -1,6 +1,6 @@
 <div>
-  <h3 class="text-base-content mb-1.5 text-2xl font-semibold">Forgot your password?</h3>
-  <p class="text-base-content/80">Enter your email address and we'll send you instructions to reset your password</p>
+  <h3 class="text-base-content mb-1.5 text-2xl font-semibold"><%= t '.title' %></h3>
+  <p class="text-base-content/80"><%= t '.subtitle' %></p>
 </div>
 
 <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
@@ -12,15 +12,15 @@
   </div>
 
   <div class="mb-4">
-    <%= f.submit "Send me reset password instructions", class: "btn btn-lg btn-primary btn-block" %>
+    <%= f.submit t('.submit'), class: "btn btn-lg btn-primary btn-block" %>
   </div>
 <% end %>
 
 <p class="text-base-content/80 mb-4 text-center">
-  Remember your password?
-  <%= link_to "Log in", new_session_path(resource_name), class: "link link-animated link-primary font-normal" %>
+  <%= t '.remember' %>
+  <%= link_to t('.login'), new_session_path(resource_name), class: "link link-animated link-primary font-normal" %>
 </p>
 
-<div class="divider">or</div>
+<div class="divider"><%= t '.or' %></div>
 
 <%= render "users/shared/links" %>

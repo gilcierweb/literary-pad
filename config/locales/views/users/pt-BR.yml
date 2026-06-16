@@ -1,0 +1,87 @@
+pt-BR:
+  users:
+    confirmations:
+      new:
+        title: "Reenviar instruções de confirmação"
+        subtitle: "Digite seu endereço de e-mail para receber as instruções de confirmação"
+        submit: "Reenviar instruções de confirmação"
+    mailer:
+      confirmation_instructions:
+        welcome: "Bem-vindo"
+        instruction: "Você pode confirmar o e-mail da sua conta através do link abaixo:"
+        action: "Confirmar minha conta"
+      email_changed:
+        hello: "Olá"
+        changing: "Estamos entrando em contato para notificá-lo que seu e-mail está sendo alterado para"
+        changed: "Estamos entrando em contato para notificá-lo que seu e-mail foi alterado para"
+      password_change:
+        hello: "Olá"
+        notification: "Estamos entrando em contato para notificá-lo que sua senha foi alterada."
+      reset_password_instructions:
+        hello: "Olá"
+        request: "Alguém solicitou um link para alterar sua senha. Você pode fazer isso através do link abaixo."
+        action: "Alterar minha senha"
+        ignore: "Se você não solicitou isso, por favor ignore este e-mail."
+        instruction: "Sua senha não será alterada até que você acesse o link acima e crie uma nova."
+      unlock_instructions:
+        hello: "Olá"
+        locked: "Sua conta foi bloqueada devido a um número excessivo de tentativas de login malsucedidas."
+        instruction: "Clique no link abaixo para desbloquear sua conta:"
+        action: "Desbloquear minha conta"
+    passwords:
+      new:
+        title: "Esqueceu sua senha?"
+        subtitle: "Digite seu endereço de e-mail e enviaremos instruções para redefinir sua senha"
+        submit: "Enviar instruções de redefinição de senha"
+        remember: "Lembrou sua senha?"
+        login: "Entrar"
+        or: "ou"
+      edit:
+        title: "Alterar sua senha"
+        subtitle: "Digite sua nova senha abaixo"
+        new_password: "Nova senha"
+        password_minimum: "(mínimo de %{count} caracteres)"
+        confirm_password: "Confirmar nova senha"
+        submit: "Alterar minha senha"
+    registrations:
+      new:
+        title: "Cadastre-se"
+        subtitle: "Junte-se ao %{app_name} e comece sua jornada de escrita"
+        password_minimum: "(mínimo de %{count} caracteres)"
+        submit: "Cadastre-se"
+        have_account: "Já tem uma conta?"
+        login: "Entrar"
+        or: "ou"
+      edit:
+        title: "Editar Perfil"
+        subtitle: "Atualize suas informações da conta"
+        waiting_confirmation: "Aguardando confirmação para:"
+        leave_blank: "(deixe em branco se não quiser alterá-la)"
+        password_minimum: "mínimo de %{count} caracteres"
+        current_password: "(precisamos de sua senha atual para confirmar suas alterações)"
+        submit: "Atualizar"
+        cancel_title: "Cancelar minha conta"
+        cancel_subtitle: "Insatisfeito?"
+        cancel_confirm: "Tem certeza?"
+        cancel_button: "Cancelar minha conta"
+        back: "Voltar"
+    sessions:
+      new:
+        title: "Entrar"
+        subtitle: "Bem-vindo de volta ao %{app_name}"
+        remember_me: "Lembrar-me"
+        forgot_password: "Esqueceu a senha?"
+        submit: "Entrar"
+        new_platform: "Novo em nossa plataforma?"
+        create_account: "Criar uma conta"
+        or: "ou"
+    shared:
+      links:
+        login: "Entrar"
+        sign_up: "Cadastre-se"
+        forgot_password: "Esqueceu sua senha?"
+        didnt_receive_confirmation: "Não recebeu instruções de confirmação?"
+        didnt_receive_unlock: "Não recebeu instruções de desbloqueio?"
+        sign_in_with: "Entrar com %{provider}"
+      error_messages:
+        title_html: "%{count} erro(s) impediram que este %{resource} fosse salvo:"

@@ -1,0 +1,15 @@
+pt-BR:
+  defaults:
+    actions:
+      save: "Salvar"
+      edit: "Editar"
+      delete: "Excluir"
+      cancel: "Cancelar"
+      back: "Voltar"
+      create: "Criar %{model}"
+      update: "Atualizar %{model}"
+      show: "Visualizar"
+    messages:
+      created_successfully: "%{model} criado(a) com sucesso."
+      updated_successfully: "%{model} atualizado(a) com sucesso."
+      deleted_successfully: "%{model} removido(a) com sucesso."

@@ -1,6 +1,6 @@
 <div>
-  <h3 class="text-base-content mb-1.5 text-2xl font-semibold">Resend confirmation instructions</h3>
-  <p class="text-base-content/80">Enter your email address to receive confirmation instructions</p>
+  <h3 class="text-base-content mb-1.5 text-2xl font-semibold"><%= t '.title' %></h3>
+  <p class="text-base-content/80"><%= t '.subtitle' %></p>
 </div>
 
 <%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
@@ -12,7 +12,7 @@
   </div>
 
   <div class="mb-4">
-    <%= f.submit "Resend confirmation instructions", class: "btn btn-lg btn-primary btn-block" %>
+    <%= f.submit t('.submit'), class: "btn btn-lg btn-primary btn-block" %>
   </div>
 <% end %>
 

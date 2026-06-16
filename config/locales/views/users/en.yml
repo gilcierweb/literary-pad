@@ -1,0 +1,87 @@
+en:
+  users:
+    confirmations:
+      new:
+        title: "Resend confirmation instructions"
+        subtitle: "Enter your email address to receive confirmation instructions"
+        submit: "Resend confirmation instructions"
+    mailer:
+      confirmation_instructions:
+        welcome: "Welcome"
+        instruction: "You can confirm your account email through the link below:"
+        action: "Confirm my account"
+      email_changed:
+        hello: "Hello"
+        changing: "We're contacting you to notify you that your email is being changed to"
+        changed: "We're contacting you to notify you that your email has been changed to"
+      password_change:
+        hello: "Hello"
+        notification: "We're contacting you to notify you that your password has been changed."
+      reset_password_instructions:
+        hello: "Hello"
+        request: "Someone has requested a link to change your password. You can do this through the link below."
+        action: "Change my password"
+        ignore: "If you didn't request this, please ignore this email."
+        instruction: "Your password won't change until you access the link above and create a new one."
+      unlock_instructions:
+        hello: "Hello"
+        locked: "Your account has been locked due to an excessive number of unsuccessful sign in attempts."
+        instruction: "Click the link below to unlock your account:"
+        action: "Unlock my account"
+    passwords:
+      new:
+        title: "Forgot your password?"
+        subtitle: "Enter your email address and we'll send you instructions to reset your password"
+        submit: "Send me reset password instructions"
+        remember: "Remember your password?"
+        login: "Log in"
+        or: "or"
+      edit:
+        title: "Change your password"
+        subtitle: "Enter your new password below"
+        new_password: "New password"
+        password_minimum: "(%{count} characters minimum)"
+        confirm_password: "Confirm new password"
+        submit: "Change my password"
+    registrations:
+      new:
+        title: "Sign up"
+        subtitle: "Join %{app_name} and start your writing journey"
+        password_minimum: "(%{count} characters minimum)"
+        submit: "Sign up"
+        have_account: "Already have an account?"
+        login: "Log in"
+        or: "or"
+      edit:
+        title: "Edit Profile"
+        subtitle: "Update your account information"
+        waiting_confirmation: "Currently waiting confirmation for:"
+        leave_blank: "(leave blank if you don't want to change it)"
+        password_minimum: "%{count} characters minimum"
+        current_password: "(we need your current password to confirm your changes)"
+        submit: "Update"
+        cancel_title: "Cancel my account"
+        cancel_subtitle: "Unhappy?"
+        cancel_confirm: "Are you sure?"
+        cancel_button: "Cancel my account"
+        back: "Back"
+    sessions:
+      new:
+        title: "Log in"
+        subtitle: "Welcome back to %{app_name}"
+        remember_me: "Remember me"
+        forgot_password: "Forgot Password?"
+        submit: "Log in"
+        new_platform: "New on our platform?"
+        create_account: "Create an account"
+        or: "or"
+    shared:
+      links:
+        login: "Log in"
+        sign_up: "Sign up"
+        forgot_password: "Forgot your password?"
+        didnt_receive_confirmation: "Didn't receive confirmation instructions?"
+        didnt_receive_unlock: "Didn't receive unlock instructions?"
+        sign_in_with: "Sign in with %{provider}"
+      error_messages:
+        title_html: "%{count} error(s) prohibited this %{resource} from being saved:"
