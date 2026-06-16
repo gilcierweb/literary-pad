@@ -1,10 +1,10 @@
 class ProfilesController < ApplicationController
-  before_action :authenticate_user!, except: [:show]
-  before_action :set_user, only: [:show]
-  before_action :set_profile, only: [:edit, :update]
+  before_action :authenticate_user!, except: [ :show ]
+  before_action :set_user, only: [ :show ]
+  before_action :set_profile, only: [ :edit, :update ]
 
   def show
-    @stories = @user.stories.published_stories.includes(user: :profile, genres: []).recent
+    @stories = @user.stories.published_stories.includes(:rich_text_description, user: :profile, genres: []).recent
     @followers = @user.followers.limit(10)
     @following = @user.following.limit(10)
   end

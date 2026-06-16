@@ -21,6 +21,8 @@
 #
 
 class Story < ApplicationRecord
+  has_rich_text :description
+  
   belongs_to :user
 
   has_many :chapters, -> { order(position: :asc) }, dependent: :destroy
@@ -35,7 +37,7 @@ class Story < ApplicationRecord
 
   validates :title, presence: true, length: { minimum: 3, maximum: 200 }
   validates :description, length: { maximum: 2000 }
-  has_rich_text :description
+
 
   scope :recent, -> { order(created_at: :desc) }
   scope :popular, -> { order(views_count: :desc, likes_count: :desc) }

@@ -2,19 +2,19 @@ class DiscoverController < ApplicationController
   def index
     @genres = Genre.all
 
-    stories = Story.published_stories.includes(user: :profile, genres: [])
+    stories = Story.published_stories.includes(:rich_text_description, user: :profile, genres: [])
 
     stories = stories.joins(:genres).where(genres: { id: params[:genre_id] }) if params[:genre_id].present?
     stories = stories.where("title ILIKE ? OR description ILIKE ?", "%#{params[:q]}%", "%#{params[:q]}%") if params[:q].present?
 
     stories = case params[:sort]
-              when "popular"
+    when "popular"
                 stories.popular
-              when "recent"
+    when "recent"
                 stories.recent
-              else
+    else
                 stories.recent
-              end
+    end
 
     @pagy, @stories = pagy(stories, items: 12)
   end

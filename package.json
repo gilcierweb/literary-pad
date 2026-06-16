@@ -14,9 +14,11 @@
     "@37signals/lexxy": "0.9.19-alpha.1",
     "@hotwired/stimulus": "^3.2.2",
     "@hotwired/turbo-rails": "^8.0.20",
+    "@rails/actiontext": "^8.1.300",
     "@rails/activestorage": "^8.1.300",
     "@tailwindcss/cli": "^4.1.18",
     "flyonui": "^2.4.1",
-    "tailwindcss": "^4.1.18"
+    "tailwindcss": "^4.1.18",
+    "trix": "^2.1.19"
   }
 }

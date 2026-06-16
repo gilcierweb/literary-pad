@@ -1,10 +1,10 @@
 class StoriesController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :show]
-  before_action :set_story, only: [:show, :edit, :update, :destroy, :publish]
+  before_action :authenticate_user!, except: [ :index, :show ]
+  before_action :set_story, only: [ :show, :edit, :update, :destroy, :publish ]
   load_and_authorize_resource
 
   def index
-    @pagy, @stories = pagy(Story.published_stories.includes(user: :profile, genres: []).recent, items: 12)
+    @pagy, @stories = pagy(Story.published_stories.includes(:rich_text_description, user: :profile, genres: []).recent, items: 12)
   end
 
   def show
