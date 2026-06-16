@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+/* @import "@37signals/lexxy/dist/lexxy.css"; */
+/* @import "@37signals/lexxy/dist/lexxy.css"; */
+
+
 @source "../../../public/*.html";
 @source "../../../app/views/**/*.html.erb";
 @source "../../../app/helpers/**/*.rb";

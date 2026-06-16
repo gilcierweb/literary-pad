@@ -17,7 +17,7 @@
 
   <div>
     <%= f.label :description, t('.description_label'), class: "label" %>
-    <%= f.text_area :description, rows: 5, class: "textarea textarea-bordered w-full", placeholder: t('.description_placeholder') %>
+    <%= f.rich_text_area :description, rows: 5, class: "textarea textarea-bordered w-full", placeholder: t('.description_placeholder') %>
     <p class="text-sm text-base-content/60 mt-1"><%= t '.description_help' %></p>
   </div>
 
