@@ -1,0 +1,20 @@
+es:
+  dashboard:
+    index:
+      title: "Panel"
+      subtitle: "Gestiona tus historias y rastrea tu progreso"
+      stories: "Historias"
+      total_views: "Vistas Totales"
+      total_likes: "Me Gusta Totales"
+      followers: "Seguidores"
+      my_stories: "Mis Historias"
+      create_new_story: "Crear Nueva Historia"
+      no_stories: "Aún no has creado ninguna historia."
+      create_first_story: "Crea Tu Primera Historia"
+      edit: "Editar"
+      add_chapter: "Agregar Capítulo"
+      chapters: "capítulos"
+      continue_reading: "Continuar Leyendo"
+      no_reading_history: "Sin historial de lectura aún."
+      my_favorites: "Mis Favoritos"
+      no_favorites: "Sin favoritos aún."

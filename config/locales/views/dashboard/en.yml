@@ -1,0 +1,20 @@
+en:
+  dashboard:
+    index:
+      title: "Dashboard"
+      subtitle: "Manage your stories and track your progress"
+      stories: "Stories"
+      total_views: "Total Views"
+      total_likes: "Total Likes"
+      followers: "Followers"
+      my_stories: "My Stories"
+      create_new_story: "Create New Story"
+      no_stories: "You haven't created any stories yet."
+      create_first_story: "Create Your First Story"
+      edit: "Edit"
+      add_chapter: "Add Chapter"
+      chapters: "chapters"
+      continue_reading: "Continue Reading"
+      no_reading_history: "No reading history yet."
+      my_favorites: "My Favorites"
+      no_favorites: "No favorites yet."

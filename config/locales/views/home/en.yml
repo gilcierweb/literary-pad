@@ -1,0 +1,11 @@
+en:
+  home:
+    index:
+      hero_title: "Discover Amazing Stories"
+      hero_subtitle: "Read, write, and share your stories with a community of passionate readers"
+      start_reading: "Start Reading"
+      start_writing: "Start Writing"
+      featured_stories: "Featured Stories"
+      view_all: "View All →"
+      browse_by_genre: "Browse by Genre"
+      recently_published: "Recently Published"

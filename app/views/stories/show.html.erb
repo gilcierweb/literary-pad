@@ -17,21 +17,21 @@
           <% if user_signed_in? %>
             <% if current_user.liked?(@story) %>
               <%= button_to story_likes_path(@story), method: :delete, class: "btn btn-error flex-1" do %>
-                ❤️ Unlike
+                <%= t '.unlike' %>
               <% end %>
             <% else %>
               <%= button_to story_likes_path(@story), class: "btn btn-ghost flex-1" do %>
-                🤍 Like
+                <%= t '.like' %>
               <% end %>
             <% end %>
 
             <% if current_user.favorited?(@story) %>
               <%= button_to story_favorites_path(@story), method: :delete, class: "btn btn-warning flex-1" do %>
-                ⭐ Favorited
+                <%= t '.favorited' %>
               <% end %>
             <% else %>
               <%= button_to story_favorites_path(@story), class: "btn btn-ghost flex-1" do %>
-                ☆ Favorite
+                <%= t '.favorite' %>
               <% end %>
             <% end %>
           <% end %>
@@ -39,30 +39,30 @@
 
         <div class="space-y-3 text-sm">
           <div class="flex justify-between">
-            <span class="text-base-content/70">Views</span>
+            <span class="text-base-content/70"><%= t '.views' %></span>
             <span class="font-semibold text-base-content"><%= @story.views_count %></span>
           </div>
           <div class="flex justify-between">
-            <span class="text-base-content/70">Likes</span>
+            <span class="text-base-content/70"><%= t '.likes' %></span>
             <span class="font-semibold text-base-content"><%= @story.likes_count %></span>
           </div>
           <div class="flex justify-between">
-            <span class="text-base-content/70">Comments</span>
+            <span class="text-base-content/70"><%= t '.comments' %></span>
             <span class="font-semibold text-base-content"><%= @story.comments_count %></span>
           </div>
           <div class="flex justify-between">
-            <span class="text-base-content/70">Chapters</span>
+            <span class="text-base-content/70"><%= t '.chapters' %></span>
             <span class="font-semibold text-base-content"><%= @story.chapters_count %></span>
           </div>
           <div class="flex justify-between">
-            <span class="text-base-content/70">Status</span>
+            <span class="text-base-content/70"><%= t '.status' %></span>
             <span class="font-semibold text-primary"><%= @story.status.titleize %></span>
           </div>
         </div>
 
         <% if @story.genres.any? %>
           <div class="mt-4 pt-4 border-t border-base-300">
-            <h4 class="text-sm font-semibold text-base-content mb-2">Genres</h4>
+            <h4 class="text-sm font-semibold text-base-content mb-2"><%= t '.genres' %></h4>
             <div class="flex flex-wrap gap-2">
               <% @story.genres.each do |genre| %>
                 <span class="badge badge-soft badge-primary">
@@ -75,8 +75,8 @@
 
         <% if can? :manage, @story %>
           <div class="mt-4 pt-4 border-t border-base-300 space-y-2">
-            <%= link_to "Edit Story", edit_story_path(@story), class: "btn btn-secondary w-full" %>
-            <%= button_to "Delete Story", story_path(@story), method: :delete, data: { turbo_confirm: "Are you sure?" }, class: "btn btn-error w-full" %>
+            <%= link_to t('.edit_story'), edit_story_path(@story), class: "btn btn-secondary w-full" %>
+            <%= button_to t('.delete_story'), story_path(@story), method: :delete, data: { turbo_confirm: t('.confirm') }, class: "btn btn-error w-full" %>
           </div>
         <% end %>
       </div>
@@ -92,7 +92,7 @@
             <span class="font-semibold"><%= @story.author_name %></span>
           <% end %>
           <span>•</span>
-          <span><%= @story.published_at&.strftime("%B %d, %Y") || "Draft" %></span>
+          <span><%= @story.published_at&.strftime("%B %d, %Y") || t('.draft') %></span>
         </div>
 
         <p class="text-base-content/80 leading-relaxed"><%= @story.description %></p>
@@ -100,7 +100,7 @@
 
       <!-- Chapters List -->
       <div class="card bg-base-200 p-6 mb-8">
-        <h2 class="text-2xl font-bold text-base-content mb-4">Chapters</h2>
+        <h2 class="text-2xl font-bold text-base-content mb-4"><%= t '.chapters_title' %></h2>
 
         <% if @chapters.any? %>
           <div class="space-y-3">
@@ -108,10 +108,10 @@
               <%= link_to story_chapter_path(@story, chapter), class: "block p-4 bg-base-100 rounded-lg hover:bg-base-300 transition" do %>
                 <div class="flex justify-between items-center">
                   <div>
-                    <span class="text-sm text-base-content/60">Chapter <%= index + 1 %></span>
+                    <span class="text-sm text-base-content/60"><%= t '.chapter' %> <%= index + 1 %></span>
                     <h3 class="font-semibold text-base-content"><%= chapter.title %></h3>
                     <p class="text-sm text-base-content/70 mt-1">
-                      <%= chapter.word_count %> words • <%= chapter.reading_time %> min read
+                      <%= chapter.word_count %> <%= t '.words' %> • <%= chapter.reading_time %> <%= t '.min_read' %>
                     </p>
                   </div>
                   <svg class="w-5 h-5 text-base-content/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -122,22 +122,22 @@
             <% end %>
           </div>
         <% else %>
-          <p class="text-base-content/60 text-center py-8">No chapters published yet.</p>
+          <p class="text-base-content/60 text-center py-8"><%= t '.no_chapters' %></p>
         <% end %>
 
         <% if can? :manage, @story %>
-          <%= link_to "Add Chapter", new_story_chapter_path(@story), class: "btn btn-primary mt-4" %>
+          <%= link_to t('.add_chapter'), new_story_chapter_path(@story), class: "btn btn-primary mt-4" %>
         <% end %>
       </div>
 
       <!-- Comments Section -->
       <div class="card bg-base-200 p-6">
-        <h2 class="text-2xl font-bold text-base-content mb-4">Comments (<%= @story.comments_count %>)</h2>
+        <h2 class="text-2xl font-bold text-base-content mb-4"><%= t '.comments_title' %> (<%= @story.comments_count %>)</h2>
 
         <% if user_signed_in? %>
           <%= form_with model: [@story, Comment.new], local: false, class: "mb-6" do |f| %>
-            <%= f.text_area :content, rows: 3, placeholder: "Share your thoughts...", class: "textarea textarea-bordered w-full mb-2" %>
-            <%= f.submit "Post Comment", class: "btn btn-primary" %>
+            <%= f.text_area :content, rows: 3, placeholder: t('.placeholder'), class: "textarea textarea-bordered w-full mb-2" %>
+            <%= f.submit t('.post_comment'), class: "btn btn-primary" %>
           <% end %>
         <% end %>
 

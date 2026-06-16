@@ -1,0 +1,18 @@
+es:
+  discover:
+    index:
+      title: "Descubrir Historias"
+      subtitle: "Encuentra tu próxima historia favorita"
+      search_placeholder: "Buscar historias..."
+      most_recent: "Más Recientes"
+      most_popular: "Más Populares"
+      filter_by_genre: "Filtrar por Género"
+      clear_filter: "Limpiar Filtro"
+      search: "Buscar"
+      clear_all: "Limpiar Todo"
+      showing_results: "Mostrando resultados"
+      for: "para"
+      in: "en"
+      showing_all: "Mostrando todas las historias"
+      no_stories: "No se encontraron historias que coincidan con sus criterios."
+      clear_filters: "Limpiar Filtros"

@@ -1,0 +1,26 @@
+es:
+  shared:
+    navbar:
+      discover: "Descubrir"
+      stories: "Historias"
+      dashboard: "Panel"
+      write: "Escribir"
+      my_profile: "Mi Perfil"
+      settings: "Configuración"
+      sign_out: "Cerrar Sesión"
+      sign_in: "Iniciar Sesión"
+      sign_up: "Registrarse"
+    footer:
+      title: "📚 LiteraryPad"
+      description: "Una plataforma moderna para escritores y lectores para conectarse a través de historias."
+      explore: "Explorar"
+      discover_stories: "Descubrir Historias"
+      browse_genres: "Navegar Géneros"
+      popular_stories: "Historias Populares"
+      create: "Crear"
+      write_story: "Escribir una Historia"
+      community: "Comunidad"
+      guidelines: "Directrices"
+      support: "Soporte"
+      about_us: "Sobre Nosotros"
+      copyright: "© %{year} LiteraryPad. Todos los derechos reservados."

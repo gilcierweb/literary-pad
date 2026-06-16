@@ -1,7 +1,7 @@
 <%= form_with model: story, class: "space-y-6" do |f| %>
   <% if story.errors.any? %>
     <div class="alert alert-error">
-      <h3 class="font-bold"><%= pluralize(story.errors.count, "error") %> prohibited this story from being saved:</h3>
+      <h3 class="font-bold"><%= pluralize(story.errors.count, t('.error')) %> <%= t '.prohibited' %></h3>
       <ul class="list-disc list-inside mt-2">
         <% story.errors.full_messages.each do |message| %>
           <li><%= message %></li>
@@ -11,18 +11,18 @@
   <% end %>
 
   <div>
-    <%= f.label :title, "Story Title", class: "label" %>
-    <%= f.text_field :title, class: "input input-bordered w-full", placeholder: "Enter your story title" %>
+    <%= f.label :title, t('.title_label'), class: "label" %>
+    <%= f.text_field :title, class: "input input-bordered w-full", placeholder: t('.title_placeholder') %>
   </div>
 
   <div>
-    <%= f.label :description, "Description", class: "label" %>
-    <%= f.text_area :description, rows: 5, class: "textarea textarea-bordered w-full", placeholder: "Describe your story..." %>
-    <p class="text-sm text-base-content/60 mt-1">A compelling description helps readers discover your story</p>
+    <%= f.label :description, t('.description_label'), class: "label" %>
+    <%= f.text_area :description, rows: 5, class: "textarea textarea-bordered w-full", placeholder: t('.description_placeholder') %>
+    <p class="text-sm text-base-content/60 mt-1"><%= t '.description_help' %></p>
   </div>
 
   <div>
-    <%= f.label :genre_ids, "Genres", class: "label" %>
+    <%= f.label :genre_ids, t('.genres_label'), class: "label" %>
     <%= f.collection_check_boxes :genre_ids, Genre.all, :id, :name do |b| %>
       <div class="inline-flex items-center mr-4 mb-2">
         <%= b.check_box class: "checkbox checkbox-primary" %>
@@ -32,17 +32,17 @@
   </div>
 
   <div>
-    <%= f.label :cover_image, "Cover Image URL (optional)", class: "label" %>
-    <%= f.text_field :cover_image, class: "input input-bordered w-full", placeholder: "https://example.com/cover.jpg" %>
+    <%= f.label :cover_image, t('.cover_image_label'), class: "label" %>
+    <%= f.text_field :cover_image, class: "input input-bordered w-full", placeholder: t('.cover_image_placeholder') %>
   </div>
 
   <div>
-    <%= f.label :status, "Status", class: "label" %>
+    <%= f.label :status, t('.status_label'), class: "label" %>
     <%= f.select :status, Story.statuses.keys.map { |k| [k.titleize, k] }, {}, class: "select select-bordered w-full" %>
   </div>
 
   <div class="flex space-x-4">
-    <%= f.submit class: "btn btn-primary" %>
-    <%= link_to "Cancel", story.persisted? ? story : stories_path, class: "btn btn-secondary" %>
+    <%= f.submit t('.submit'), class: "btn btn-primary" %>
+    <%= link_to t('.cancel'), story.persisted? ? story : stories_path, class: "btn btn-secondary" %>
   </div>
 <% end %>

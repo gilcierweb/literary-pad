@@ -1,26 +1,26 @@
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
   <div class="mb-8">
-    <h1 class="text-4xl font-bold text-base-content mb-2">Dashboard</h1>
-    <p class="text-base-content/70">Manage your stories and track your progress</p>
+    <h1 class="text-4xl font-bold text-base-content mb-2"><%= t '.title' %></h1>
+    <p class="text-base-content/70"><%= t '.subtitle' %></p>
   </div>
 
   <!-- Stats Cards -->
   <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
     <div class="card bg-base-200 p-6">
       <div class="text-3xl font-bold text-primary mb-2"><%= @stats[:stories_count] %></div>
-      <div class="text-base-content/70">Stories</div>
+      <div class="text-base-content/70"><%= t '.stories' %></div>
     </div>
     <div class="card bg-base-200 p-6">
       <div class="text-3xl font-bold text-primary mb-2"><%= @stats[:total_views] %></div>
-      <div class="text-base-content/70">Total Views</div>
+      <div class="text-base-content/70"><%= t '.total_views' %></div>
     </div>
     <div class="card bg-base-200 p-6">
       <div class="text-3xl font-bold text-primary mb-2"><%= @stats[:total_likes] %></div>
-      <div class="text-base-content/70">Total Likes</div>
+      <div class="text-base-content/70"><%= t '.total_likes' %></div>
     </div>
     <div class="card bg-base-200 p-6">
       <div class="text-3xl font-bold text-primary mb-2"><%= @stats[:followers_count] %></div>
-      <div class="text-base-content/70">Followers</div>
+      <div class="text-base-content/70"><%= t '.followers' %></div>
     </div>
   </div>
 
@@ -29,8 +29,8 @@
     <div class="lg:col-span-2">
       <div class="card bg-base-200 p-6">
         <div class="flex justify-between items-center mb-6">
-          <h2 class="text-2xl font-bold text-base-content">My Stories</h2>
-          <%= link_to "Create New Story", new_story_path, class: "btn btn-primary" %>
+          <h2 class="text-2xl font-bold text-base-content"><%= t '.my_stories' %></h2>
+          <%= link_to t('.create_new_story'), new_story_path, class: "btn btn-primary" %>
         </div>
 
         <% if @my_stories.any? %>
@@ -51,14 +51,14 @@
                       <span>👁 <%= story.views_count %></span>
                       <span>❤️ <%= story.likes_count %></span>
                       <span>💬 <%= story.comments_count %></span>
-                      <span><%= story.chapters_count %> chapters</span>
+                      <span><%= story.chapters_count %> <%= t '.chapters' %></span>
                     </div>
                   </div>
 
                   <div class="ml-4 flex space-x-2">
-                    <%= link_to "Edit", edit_story_path(story), class: "text-sm text-primary hover:opacity-80" %>
+                    <%= link_to t('.edit'), edit_story_path(story), class: "text-sm text-primary hover:opacity-80" %>
                     <%= link_to new_story_chapter_path(story), class: "text-sm text-success hover:opacity-80" do %>
-                      Add Chapter
+                      <%= t '.add_chapter' %>
                     <% end %>
                   </div>
                 </div>
@@ -67,8 +67,8 @@
           </div>
         <% else %>
           <div class="text-center py-12">
-            <p class="text-base-content/60 mb-4">You haven't created any stories yet.</p>
-            <%= link_to "Create Your First Story", new_story_path, class: "btn btn-primary" %>
+            <p class="text-base-content/60 mb-4"><%= t '.no_stories' %></p>
+            <%= link_to t('.create_first_story'), new_story_path, class: "btn btn-primary" %>
           </div>
         <% end %>
       </div>
@@ -78,7 +78,7 @@
     <div class="space-y-6">
       <!-- Reading History -->
       <div class="card bg-base-200 p-6">
-        <h3 class="text-xl font-bold text-base-content mb-4">Continue Reading</h3>
+        <h3 class="text-xl font-bold text-base-content mb-4"><%= t '.continue_reading' %></h3>
         <% if @reading_history.any? %>
           <div class="space-y-3">
             <% @reading_history.first(5).each do |reading| %>
@@ -87,7 +87,7 @@
                   <%= reading.chapter.story.title %>
                 </h4>
                 <p class="text-xs text-base-content/70 mt-1">
-                  Chapter <%= reading.chapter.position %>: <%= reading.chapter.title %>
+                  <%= t '.chapter' %> <%= reading.chapter.position %>: <%= reading.chapter.title %>
                 </p>
                 <div class="mt-2 bg-base-300 rounded-full h-1.5">
                   <div class="bg-primary h-1.5 rounded-full" style="width: <%= reading.progress %>%"></div>
@@ -96,13 +96,13 @@
             <% end %>
           </div>
         <% else %>
-          <p class="text-base-content/60 text-sm">No reading history yet.</p>
+          <p class="text-base-content/60 text-sm"><%= t '.no_reading_history' %></p>
         <% end %>
       </div>
 
       <!-- Favorites -->
       <div class="card bg-base-200 p-6">
-        <h3 class="text-xl font-bold text-base-content mb-4">My Favorites</h3>
+        <h3 class="text-xl font-bold text-base-content mb-4"><%= t '.my_favorites' %></h3>
         <% if @favorites.any? %>
           <div class="space-y-3">
             <% @favorites.each do |story| %>
@@ -117,7 +117,7 @@
             <% end %>
           </div>
         <% else %>
-          <p class="text-base-content/60 text-sm">No favorites yet.</p>
+          <p class="text-base-content/60 text-sm"><%= t '.no_favorites' %></p>
         <% end %>
       </div>
     </div>

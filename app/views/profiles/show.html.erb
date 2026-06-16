@@ -17,15 +17,15 @@
           <div class="flex items-center space-x-6 text-sm text-base-content/70">
             <div>
               <span class="font-semibold text-base-content"><%= @user.stories.count %></span>
-              Stories
+              <%= t '.stories' %>
             </div>
             <div>
               <span class="font-semibold text-base-content"><%= @user.followers.count %></span>
-              Followers
+              <%= t '.followers' %>
             </div>
             <div>
               <span class="font-semibold text-base-content"><%= @user.following.count %></span>
-              Following
+              <%= t '.following' %>
             </div>
           </div>
         </div>
@@ -34,12 +34,12 @@
       <div class="flex space-x-2">
         <% if user_signed_in? %>
           <% if current_user == @user %>
-            <%= link_to "Edit Profile", edit_profile_path(@user), class: "btn btn-secondary" %>
+            <%= link_to t('.edit_profile'), edit_profile_path(@user), class: "btn btn-secondary" %>
           <% else %>
             <% if current_user.following?(@user) %>
-              <%= button_to "Unfollow", user_follows_path(@user), method: :delete, class: "btn btn-secondary" %>
+              <%= button_to t('.unfollow'), user_follows_path(@user), method: :delete, class: "btn btn-secondary" %>
             <% else %>
-              <%= button_to "Follow", user_follows_path(@user), class: "btn btn-primary" %>
+              <%= button_to t('.follow'), user_follows_path(@user), class: "btn btn-primary" %>
             <% end %>
           <% end %>
         <% end %>
@@ -49,7 +49,7 @@
 
   <!-- Stories -->
   <div class="mb-8">
-    <h2 class="text-2xl font-bold text-base-content mb-6">Stories by <%= @user.profile.display_name %></h2>
+    <h2 class="text-2xl font-bold text-base-content mb-6"><%= t '.stories_by' %> <%= @user.profile.display_name %></h2>
 
     <% if @stories.any? %>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
@@ -59,7 +59,7 @@
       </div>
     <% else %>
       <div class="text-center py-12 card bg-base-200">
-        <p class="text-base-content/60">No published stories yet.</p>
+        <p class="text-base-content/60"><%= t '.no_stories' %></p>
       </div>
     <% end %>
   </div>

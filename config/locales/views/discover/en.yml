@@ -1,0 +1,18 @@
+en:
+  discover:
+    index:
+      title: "Discover Stories"
+      subtitle: "Find your next favorite story"
+      search_placeholder: "Search stories..."
+      most_recent: "Most Recent"
+      most_popular: "Most Popular"
+      filter_by_genre: "Filter by Genre"
+      clear_filter: "Clear Filter"
+      search: "Search"
+      clear_all: "Clear All"
+      showing_results: "Showing results"
+      for: "for"
+      in: "in"
+      showing_all: "Showing all stories"
+      no_stories: "No stories found matching your criteria."
+      clear_filters: "Clear Filters"

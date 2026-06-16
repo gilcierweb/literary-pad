@@ -1,0 +1,32 @@
+pt-PT:
+  chapters:
+    form:
+      error: "erro"
+      prohibited: "impediu que este capítulo fosse guardado"
+      title_label: "Título do Capítulo"
+      title_placeholder: "Introduza o título do capítulo"
+      content_label: "Conteúdo do Capítulo"
+      content_placeholder: "Escreva o conteúdo do capítulo aqui..."
+      words: "palavras"
+      position_label: "Número do Capítulo"
+      submit: "Guardar"
+      cancel: "Cancelar"
+    edit:
+      title: "Editar Capítulo"
+      subtitle: "Atualizar conteúdo do capítulo"
+    new:
+      title: "Novo Capítulo"
+      subtitle: "Adicionar um novo capítulo a"
+    show:
+      back_to: "Voltar a"
+      chapter: "Capítulo"
+      words: "palavras"
+      min_read: "min de leitura"
+      edit: "Editar Capítulo"
+      delete: "Eliminar Capítulo"
+      confirm: "Tem a certeza?"
+      previous: "← Capítulo Anterior"
+      next: "Próximo Capítulo →"
+      comments: "Comentários"
+      placeholder: "Partilhe os seus pensamentos sobre este capítulo..."
+      post_comment: "Publicar Comentário"

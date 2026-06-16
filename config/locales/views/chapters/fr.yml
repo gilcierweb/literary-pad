@@ -1,0 +1,32 @@
+fr:
+  chapters:
+    form:
+      error: "erreur"
+      prohibited: "a empêché ce chapitre d'être enregistré"
+      title_label: "Titre du Chapitre"
+      title_placeholder: "Entrez le titre du chapitre"
+      content_label: "Contenu du Chapitre"
+      content_placeholder: "Écrivez le contenu de votre chapitre ici..."
+      words: "mots"
+      position_label: "Numéro de Chapitre"
+      submit: "Enregistrer"
+      cancel: "Annuler"
+    edit:
+      title: "Modifier le Chapitre"
+      subtitle: "Mettre à jour le contenu du chapitre"
+    new:
+      title: "Nouveau Chapitre"
+      subtitle: "Ajouter un nouveau chapitre à"
+    show:
+      back_to: "Retour à"
+      chapter: "Chapitre"
+      words: "mots"
+      min_read: "min de lecture"
+      edit: "Modifier le Chapitre"
+      delete: "Supprimer le Chapitre"
+      confirm: "Êtes-vous sûr?"
+      previous: "← Chapitre Précédent"
+      next: "Chapitre Suivant →"
+      comments: "Commentaires"
+      placeholder: "Partagez vos pensées sur ce chapitre..."
+      post_comment: "Publier le Commentaire"

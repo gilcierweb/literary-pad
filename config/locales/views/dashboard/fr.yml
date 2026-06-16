@@ -1,0 +1,20 @@
+fr:
+  dashboard:
+    index:
+      title: "Tableau de bord"
+      subtitle: "Gérez vos histoires et suivez vos progrès"
+      stories: "Histoires"
+      total_views: "Vues Totales"
+      total_likes: "J'aime Totaux"
+      followers: "Abonnés"
+      my_stories: "Mes Histoires"
+      create_new_story: "Créer une Nouvelle Histoire"
+      no_stories: "Vous n'avez pas encore créé d'histoires."
+      create_first_story: "Créez Votre Première Histoire"
+      edit: "Modifier"
+      add_chapter: "Ajouter un Chapitre"
+      chapters: "chapitres"
+      continue_reading: "Continuer la Lecture"
+      no_reading_history: "Pas d'historique de lecture encore."
+      my_favorites: "Mes Favoris"
+      no_favorites: "Pas de favoris encore."

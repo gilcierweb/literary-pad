@@ -1,0 +1,20 @@
+pt-PT:
+  dashboard:
+    index:
+      title: "Painel"
+      subtitle: "Gerencie as suas histórias e acompanhe o seu progresso"
+      stories: "Histórias"
+      total_views: "Visualizações Totais"
+      total_likes: "Gostos Totais"
+      followers: "Seguidores"
+      my_stories: "Minhas Histórias"
+      create_new_story: "Criar Nova História"
+      no_stories: "Ainda não criou nenhuma história."
+      create_first_story: "Crie a Sua Primeira História"
+      edit: "Editar"
+      add_chapter: "Adicionar Capítulo"
+      chapters: "capítulos"
+      continue_reading: "Continuar a Ler"
+      no_reading_history: "Sem histórico de leitura ainda."
+      my_favorites: "Meus Favoritos"
+      no_favorites: "Sem favoritos ainda."

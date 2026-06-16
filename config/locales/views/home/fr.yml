@@ -1,0 +1,11 @@
+fr:
+  home:
+    index:
+      hero_title: "Découvrez des Histoires Incroyables"
+      hero_subtitle: "Lisez, écrivez et partagez vos histoires avec une communauté de lecteurs passionnés"
+      start_reading: "Commencer à Lire"
+      start_writing: "Commencer à Écrire"
+      featured_stories: "Histoires en Vedette"
+      view_all: "Voir Tout →"
+      browse_by_genre: "Parcourir par Genre"
+      recently_published: "Publiés Récemment"

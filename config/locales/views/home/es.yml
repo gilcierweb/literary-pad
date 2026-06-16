@@ -1,0 +1,11 @@
+es:
+  home:
+    index:
+      hero_title: "Descubre Historias Increíbles"
+      hero_subtitle: "Lee, escribe y comparte tus historias con una comunidad de lectores apasionados"
+      start_reading: "Comenzar a Leer"
+      start_writing: "Comenzar a Escribir"
+      featured_stories: "Historias Destacadas"
+      view_all: "Ver Todo →"
+      browse_by_genre: "Navegar por Género"
+      recently_published: "Publicados Recientemente"

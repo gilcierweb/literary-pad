@@ -1,0 +1,18 @@
+fr:
+  discover:
+    index:
+      title: "Découvrir des Histoires"
+      subtitle: "Trouvez votre prochaine histoire préférée"
+      search_placeholder: "Rechercher des histoires..."
+      most_recent: "Plus Récentes"
+      most_popular: "Plus Populaires"
+      filter_by_genre: "Filtrer par Genre"
+      clear_filter: "Effacer le Filtre"
+      search: "Rechercher"
+      clear_all: "Effacer Tout"
+      showing_results: "Affichage des résultats"
+      for: "pour"
+      in: "dans"
+      showing_all: "Affichage de toutes les histoires"
+      no_stories: "Aucune histoire trouvée correspondant à vos critères."
+      clear_filters: "Effacer les Filtres"

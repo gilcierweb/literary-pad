@@ -1,0 +1,32 @@
+es:
+  chapters:
+    form:
+      error: "error"
+      prohibited: "prohibió que este capítulo se guardara"
+      title_label: "Título del Capítulo"
+      title_placeholder: "Ingrese el título del capítulo"
+      content_label: "Contenido del Capítulo"
+      content_placeholder: "Escriba el contenido del capítulo aquí..."
+      words: "palabras"
+      position_label: "Número de Capítulo"
+      submit: "Guardar"
+      cancel: "Cancelar"
+    edit:
+      title: "Editar Capítulo"
+      subtitle: "Actualizar contenido del capítulo"
+    new:
+      title: "Nuevo Capítulo"
+      subtitle: "Agregar un nuevo capítulo a"
+    show:
+      back_to: "Volver a"
+      chapter: "Capítulo"
+      words: "palabras"
+      min_read: "min de lectura"
+      edit: "Editar Capítulo"
+      delete: "Eliminar Capítulo"
+      confirm: "¿Estás seguro?"
+      previous: "← Capítulo Anterior"
+      next: "Siguiente Capítulo →"
+      comments: "Comentarios"
+      placeholder: "Comparte tus pensamientos sobre este capítulo..."
+      post_comment: "Publicar Comentario"

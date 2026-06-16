@@ -1,0 +1,32 @@
+en:
+  chapters:
+    form:
+      error: "error"
+      prohibited: "prohibited this chapter from being saved"
+      title_label: "Chapter Title"
+      title_placeholder: "Enter chapter title"
+      content_label: "Chapter Content"
+      content_placeholder: "Write your chapter content here..."
+      words: "words"
+      position_label: "Chapter Number"
+      submit: "Save"
+      cancel: "Cancel"
+    edit:
+      title: "Edit Chapter"
+      subtitle: "Update chapter content"
+    new:
+      title: "New Chapter"
+      subtitle: "Add a new chapter to"
+    show:
+      back_to: "Back to"
+      chapter: "Chapter"
+      words: "words"
+      min_read: "min read"
+      edit: "Edit Chapter"
+      delete: "Delete Chapter"
+      confirm: "Are you sure?"
+      previous: "← Previous Chapter"
+      next: "Next Chapter →"
+      comments: "Comments"
+      placeholder: "Share your thoughts on this chapter..."
+      post_comment: "Post Comment"
