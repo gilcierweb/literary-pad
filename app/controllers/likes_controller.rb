@@ -3,7 +3,7 @@ class LikesController < ApplicationController
 
   def create
     @likeable = find_likeable
-    current_user.like(@likeable)
+    @like = current_user.like(@likeable)
 
     respond_to do |format|
       format.turbo_stream
@@ -13,6 +13,7 @@ class LikesController < ApplicationController
 
   def destroy
     @likeable = find_likeable
+    @like = current_user.likes.find_by(likeable: @likeable)
     current_user.unlike(@likeable)
 
     respond_to do |format|

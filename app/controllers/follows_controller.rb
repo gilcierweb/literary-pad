@@ -3,7 +3,7 @@ class FollowsController < ApplicationController
 
   def create
     @user = User.find(params[:user_id])
-    current_user.follow(@user)
+    @follow = current_user.follow(@user)
 
     respond_to do |format|
       format.turbo_stream
@@ -13,6 +13,7 @@ class FollowsController < ApplicationController
 
   def destroy
     @user = User.find(params[:user_id])
+    @follow = current_user.active_follows.find_by(followed_id: @user.id)
     current_user.unfollow(@user)
 
     respond_to do |format|

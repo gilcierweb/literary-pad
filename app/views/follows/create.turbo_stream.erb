@@ -1,0 +1,5 @@
+<%= turbo_stream.replace "follow_button_User_#{@user.id}" do %>
+  <%= button_to user_follow_path(@user, @follow), method: :delete, id: "follow_button_User_#{@user.id}", class: "btn btn-secondary" do %>
+    <%= t 'profiles.show.unfollow' %>
+  <% end %>
+<% end %>

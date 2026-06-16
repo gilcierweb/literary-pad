@@ -1,0 +1,5 @@
+<%= turbo_stream.replace "favorite_button_Story_#{@story.id}" do %>
+  <%= button_to story_favorite_path(@story, @favorite), method: :delete, id: "favorite_button_Story_#{@story.id}", class: "btn btn-warning flex-1" do %>
+    <%= t 'stories.show.favorited' %>
+  <% end %>
+<% end %>

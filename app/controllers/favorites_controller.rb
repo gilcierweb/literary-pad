@@ -3,7 +3,7 @@ class FavoritesController < ApplicationController
 
   def create
     @story = Story.find(params[:story_id])
-    current_user.favorite(@story)
+    @favorite = current_user.favorite(@story)
 
     respond_to do |format|
       format.turbo_stream
@@ -13,6 +13,7 @@ class FavoritesController < ApplicationController
 
   def destroy
     @story = Story.find(params[:story_id])
+    @favorite = current_user.favorites.find_by(story_id: @story.id)
     current_user.unfavorite(@story)
 
     respond_to do |format|

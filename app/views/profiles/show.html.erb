@@ -37,9 +37,9 @@
             <%= link_to t('.edit_profile'), edit_profile_path(@user), class: "btn btn-secondary" %>
           <% else %>
             <% if current_user.following?(@user) %>
-              <%= button_to t('.unfollow'), user_follows_path(@user), method: :delete, class: "btn btn-secondary" %>
+              <%= button_to t('.unfollow'), user_follow_path(@user, current_user.active_follows.find_by(followed: @user)), method: :delete, id: "follow_button_User_#{@user.id}", class: "btn btn-secondary" %>
             <% else %>
-              <%= button_to t('.follow'), user_follows_path(@user), class: "btn btn-primary" %>
+              <%= button_to t('.follow'), user_follows_path(@user), method: :post, id: "follow_button_User_#{@user.id}", class: "btn btn-primary" %>
             <% end %>
           <% end %>
         <% end %>

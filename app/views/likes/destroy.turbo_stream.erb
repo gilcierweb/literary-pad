@@ -1,5 +1,3 @@
-<%= turbo_stream.replace "like_button_#{@likeable.class.name}_#{@likeable.id}" do %>
-  <%= button_to like_path, id: "like_button_#{@likeable.class.name}_#{@likeable.id}", class: "btn btn-ghost flex-1" do %>
-    🤍 Like
-  <% end %>
+<%= turbo_stream.replace "like_button_Story_#{@likeable.id}" do %>
+  <%= button_to t('stories.show.like'), story_likes_path(@likeable), method: :post, id: "like_button_Story_#{@likeable.id}", class: "btn btn-ghost flex-1" %>
 <% end %>

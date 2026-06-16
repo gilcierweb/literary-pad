@@ -1,5 +1,5 @@
 <%= turbo_stream.replace "like_button_#{@likeable.class.name}_#{@likeable.id}" do %>
-  <%= button_to unlike_path, method: :delete, id: "like_button_#{@likeable.class.name}_#{@likeable.id}", class: "btn btn-error flex-1" do %>
-    ❤️ Unlike
+  <%= button_to story_like_path(@likeable, @like), method: :delete, id: "like_button_#{@likeable.class.name}_#{@likeable.id}", class: "btn btn-error flex-1" do %>
+    <%= t 'stories.show.unlike' %>
   <% end %>
 <% end %>

@@ -16,23 +16,15 @@
         <div class="flex space-x-2 mb-4">
           <% if user_signed_in? %>
             <% if current_user.liked?(@story) %>
-              <%= button_to story_likes_path(@story), method: :delete, class: "btn btn-error flex-1" do %>
-                <%= t '.unlike' %>
-              <% end %>
+              <%= button_to t('.unlike'), story_like_path(@story, current_user.likes.find_by(likeable: @story)), method: :delete, id: "like_button_Story_#{@story.id}", class: "btn btn-error flex-1" %>
             <% else %>
-              <%= button_to story_likes_path(@story), class: "btn btn-ghost flex-1" do %>
-                <%= t '.like' %>
-              <% end %>
+              <%= button_to t('.like'), story_likes_path(@story), method: :post, id: "like_button_Story_#{@story.id}", class: "btn btn-ghost flex-1" %>
             <% end %>
 
             <% if current_user.favorited?(@story) %>
-              <%= button_to story_favorites_path(@story), method: :delete, class: "btn btn-warning flex-1" do %>
-                <%= t '.favorited' %>
-              <% end %>
+              <%= button_to t('.favorited'), story_favorite_path(@story, current_user.favorites.find_by(story: @story)), method: :delete, id: "favorite_button_Story_#{@story.id}", class: "btn btn-warning flex-1" %>
             <% else %>
-              <%= button_to story_favorites_path(@story), class: "btn btn-ghost flex-1" do %>
-                <%= t '.favorite' %>
-              <% end %>
+              <%= button_to t('.favorite'), story_favorites_path(@story), method: :post, id: "favorite_button_Story_#{@story.id}", class: "btn btn-ghost flex-1" %>
             <% end %>
           <% end %>
         </div>

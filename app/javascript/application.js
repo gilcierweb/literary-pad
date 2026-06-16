@@ -10,7 +10,6 @@ import "flyonui/dist/carousel"
 import "flyonui/dist/remove-element"
 import "flyonui/dist/tabs"
 import "flyonui/dist/overlay"
-import "flyonui/dist/"
 
 document.addEventListener('turbo:load', function() {
     // Load plugins preline flyonui
