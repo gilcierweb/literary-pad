@@ -26,6 +26,7 @@ es:
       no_stories: "No se encontraron historias."
       start_writing: "Comenzar a Escribir"
     show:
+      chapter: "Capítulo"
       views: "Vistas"
       likes: "Me Gusta"
       comments: "Comentarios"

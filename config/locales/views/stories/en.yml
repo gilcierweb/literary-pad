@@ -26,6 +26,7 @@ en:
       no_stories: "No stories found."
       start_writing: "Start Writing"
     show:
+      chapter: "Chapter"
       views: "Views"
       likes: "Likes"
       comments: "Comments"

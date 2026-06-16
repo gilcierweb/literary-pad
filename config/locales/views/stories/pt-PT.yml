@@ -26,6 +26,7 @@ pt-PT:
       no_stories: "Nenhuma história encontrada."
       start_writing: "Começar a Escrever"
     show:
+      chapter: "Capítulo"
       views: "Visualizações"
       likes: "Gostos"
       comments: "Comentários"

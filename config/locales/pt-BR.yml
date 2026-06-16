@@ -1,4 +1,7 @@
 pt-BR:
+  app:
+    name: "Literary Pad"
+    tagline: "Seu espaço criativo"
   defaults:
     actions:
       save: "Salvar"

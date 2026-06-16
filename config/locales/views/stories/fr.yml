@@ -26,6 +26,7 @@ fr:
       no_stories: "Aucune histoire trouvée."
       start_writing: "Commencer à Écrire"
     show:
+      chapter: "Chapitre"
       views: "Vues"
       likes: "J'aime"
       comments: "Commentaires"
